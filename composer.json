@@ -1,0 +1,29 @@
+{
+    "name": "samuelelonghin/yii2-detailview",
+    "description": "new Yii2 DetailView",
+    "type": "yii2-extension",
+    "version": "1.1.1",
+    "keywords": [
+        "yii2",
+        "extension",
+        "detailview",
+        "db"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuele Longhin",
+            "email": "longhin.samuele@outlook.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "kartik-v/yii2-detail-view": ">=1.8.7",
+        "samuelelonghin/yii2-activeform": ">=1.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "samuelelonghin\\detailview\\": "src"
+        }
+    }
+}
