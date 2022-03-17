@@ -1,6 +1,6 @@
 <?php
 
-namespace app\widgets;
+namespace samuelelonghin\detailwiew;
 
 use kartik\base\BootstrapInterface;
 use kartik\base\BootstrapTrait;
