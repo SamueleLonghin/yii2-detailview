@@ -1,6 +1,6 @@
 <?php
 
-namespace samuelelonghin\detailwiew;
+namespace samuelelonghin\detailview;
 
 use kartik\base\BootstrapInterface;
 use kartik\base\BootstrapTrait;
