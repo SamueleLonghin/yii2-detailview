@@ -15,7 +15,7 @@ use yii\web\AssetBundle;
  */
 class DetailViewAsset extends AssetBundle
 {
-    $depends=[
-       "rmrevin\yii\fontawesome\AssetBundle"
-    ]
+	public $depends = [
+		"rmrevin\yii\fontawesome\AssetBundle"
+	];
 }

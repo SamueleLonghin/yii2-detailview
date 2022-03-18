@@ -4,7 +4,6 @@ namespace samuelelonghin\detailview;
 
 use kartik\base\BootstrapInterface;
 use kartik\base\BootstrapTrait;
-use kartik\detail\DetailViewAsset;
 use samuelelonghin\form\BaseActiveForm;
 use Yii;
 use yii\helpers\ArrayHelper;
