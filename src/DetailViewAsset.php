@@ -16,6 +16,6 @@ use yii\web\AssetBundle;
 class DetailViewAsset extends AssetBundle
 {
 	public $depends = [
-		"rmrevin\yii\fontawesome\AssetBundle"
+		\rmrevin\yii\fontawesome\AssetBundle::class,
 	];
 }
