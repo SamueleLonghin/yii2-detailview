@@ -55,7 +55,11 @@ HTML;
 	{
 		self::$_inputsList = ArrayHelper::merge(self::$_inputsList, [self::INPUT_NUMBER => 'numberInput', self::INPUT_LAT_LON => 'latLonInput']);
 
-        DetailViewAsset::register($this->getView());
+		if (array_key_exists('userPermissionDelete', Yii::$app->params)) $this->userPermissionDelete = Yii::$app->params['userPermissionDelete'];
+		if (array_key_exists('userPermissionUpdate', Yii::$app->params)) $this->userPermissionUpdate = Yii::$app->params['userPermissionUpdate'];
+		if (array_key_exists('userClass', Yii::$app->params)) $this->userClass = Yii::$app->params['userClass'];
+
+		DetailViewAsset::register($this->getView());
 		parent::init();
 	}
 
@@ -80,6 +84,7 @@ HTML;
 			$this->canDelete = $this->userClass::_can(get_class($this->model), $this->model->id, $this->userPermissionDelete);
 		if ($this->canUpdate === null && isset($this->userClass) && isset($this->userPermissionDelete))
 			$this->canUpdate = $this->userClass::_can(get_class($this->model), $this->model->id, $this->userPermissionUpdate);
+
 
 		if ($this->enableEditMode === null && ($this->canUpdate !== false || $this->canDelete !== false))
 			$this->enableEditMode = true;
