@@ -14,8 +14,11 @@ class DetailView extends \kartik\detail\DetailView implements BootstrapInterface
 
 	const INPUT_ROUND_CHECKBOX = 'round-checkbox';
 	const INPUT_LAT_LON = 'latLonInput';
-	const INPUT_NUMBER = 'numberInput';
 	const FORMAT_NUMBER = 'number';
+	const INPUT_NUMBER = 'numberInput';
+	const FORMAT_DATE = 'date';
+	const INPUT_DATE = 'dateInput';
+	const FORMAT_BOOLEAN = 'boolean';
 
 	public $formAction;
 
@@ -53,7 +56,7 @@ HTML;
 
 	public function init()
 	{
-		self::$_inputsList = ArrayHelper::merge(self::$_inputsList, [self::INPUT_NUMBER => 'numberInput', self::INPUT_LAT_LON => 'latLonInput']);
+		self::$_inputsList = ArrayHelper::merge(self::$_inputsList, [self::INPUT_NUMBER => 'numberInput', self::INPUT_LAT_LON => 'latLonInput', self::INPUT_DATE => 'dateInput']);
 
 		if (array_key_exists('userPermissionDelete', Yii::$app->params)) $this->userPermissionDelete = Yii::$app->params['userPermissionDelete'];
 		if (array_key_exists('userPermissionUpdate', Yii::$app->params)) $this->userPermissionUpdate = Yii::$app->params['userPermissionUpdate'];
@@ -103,7 +106,14 @@ HTML;
 		if (isset($config['format']) && !isset($config['type'])) {
 			switch ($config['format']) {
 				case self::FORMAT_NUMBER:
-					$config['type'] = DetailView::INPUT_NUMBER;
+					$config['type'] = self::INPUT_NUMBER;
+					break;
+				case self::FORMAT_DATE:
+					$config['type'] = self::INPUT_DATE;
+					break;
+				case self::FORMAT_BOOLEAN:
+					$config['type'] = self::INPUT_SWITCH;
+					break;
 			}
 		}
 		return parent::renderFormAttribute($config);

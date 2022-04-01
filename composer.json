@@ -2,7 +2,6 @@
     "name": "samuelelonghin/yii2-detailview",
     "description": "new Yii2 DetailView",
     "type": "yii2-extension",
-    "version": "1.1.8",
     "keywords": [
         "yii2",
         "extension",
