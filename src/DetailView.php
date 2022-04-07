@@ -20,6 +20,7 @@ class DetailView extends \kartik\detail\DetailView implements BootstrapInterface
 	const INPUT_DATE = 'dateInput';
 	const FORMAT_BOOLEAN = 'boolean';
 	const INPUT_SWITCH = 'switchInput';
+	const FORMAT_TEXT_AREA = 'textArea';
 
 	public $formAction;
 
@@ -114,6 +115,10 @@ HTML;
 					break;
 				case self::FORMAT_BOOLEAN:
 					$config['type'] = self::INPUT_SWITCH;
+					break;
+				case self::FORMAT_TEXT_AREA:
+					$config['type'] = self::INPUT_TEXTAREA;
+					$config['options'] = ['rows' => (array_key_exists('value', $config) ? substr_count($config['value'], "\n") : 0) + 5,];
 					break;
 			}
 		}
