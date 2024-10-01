@@ -124,7 +124,7 @@ HTML;
                     break;
                 case self::FORMAT_TEXT_AREA:
                     $config['type'] = self::INPUT_TEXTAREA;
-                    $config['options'] = ['rows' => (array_key_exists('value', $config) ? substr_count($config['value'], "\n") : 0) + 5,];
+                    $config['options'] = ['rows' => (array_key_exists('value', $config) && $config['value'] != null ? substr_count($config['value'], "\n") : 0) + 5,];
                     break;
             }
         }
